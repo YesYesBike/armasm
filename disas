@@ -1,0 +1,2 @@
+aarch64-linux-gnu-objdump -D -b binary -maarch64 exe |\
+	sed 1,7d | perl -lane 'print "\tdd 0x$F[1]\t; @F[2..$#F]"'
