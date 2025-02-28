@@ -1,0 +1,7 @@
+cross = aarch64-linux-gnu-
+
+__def__: e
+
+e:
+	$(cross)readelf -h exe | grep Entry | cut -d: -f2 | sed -e 's/ \+//g' |\
+		tr -d \\n | xsel -ib

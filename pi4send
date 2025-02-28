@@ -1,3 +1,0 @@
-#!/usr/bin/sh
-
-rsync exe pi@pi4:~/test

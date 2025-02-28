@@ -1,0 +1,3 @@
+#!/usr/bin/sh
+
+rsync exe debug.sh pi@pi3:~/test

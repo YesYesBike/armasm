@@ -1,0 +1,2 @@
+arm-none-eabi-objdump -D -b binary -marm exe |\
+	sed 1,7d | perl -lane 'print "\tdd 0x$F[1]\t; @F[2..$#F]"'

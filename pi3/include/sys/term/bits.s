@@ -1,0 +1,186 @@
+	.ifndef __TERM_BITS__
+	.set __TERM_BITS__, 0
+
+	//see /usr/include/bits/termios.h
+
+
+	//#define NCCS 32
+
+	//typedef unsigned char	cc_t;
+	//typedef unsigned int	speed_t;
+	//typedef unsigned int	tcflag_t;
+
+	//struct termios {
+	//	tcflag_t c_iflag;		0
+	//	tcflag_t c_oflag;		4
+    //	tcflag_t c_cflag;		8
+    //	tcflag_t c_lflag;		12
+    //	cc_t c_line;			16
+    //	cc_t c_cc[NCCS];		20
+    //	speed_t c_ispeed;		52
+    //	speed_t c_ospeed;		56
+	//};
+
+	//sizeof(struct termios): 60
+
+
+	//c_iflag
+	.set TERM_IGNBRK,	0000001
+	.set TERM_BRKINT,	0000002
+	.set TERM_IGNPAR,	0000004
+	.set TERM_PARMRK,	0000010
+	.set TERM_INPCK,	0000020
+	.set TERM_ISTRIP,	0000040
+	.set TERM_INLCR,	0000100
+	.set TERM_IGNCR,	0000200
+	.set TERM_ICRNL,	0000400
+	.set TERM_IUCLC,	0001000
+	.set TERM_IXON,		0002000
+	.set TERM_IXANY,	0004000
+	.set TERM_IXOFF,	0010000
+	.set TERM_IMAXBEL,	0020000
+	.set TERM_IUTF8,	0040000
+
+
+	//c_oflag
+	.set TERM_OPOST,	0000001
+	.set TERM_OLCUC,	0000002
+	.set TERM_ONLCR,	0000004
+	.set TERM_OCRNL,	0000010
+	.set TERM_ONOCR,	0000020
+	.set TERM_ONLRET,	0000040
+	.set TERM_OFILL,	0000100
+	.set TERM_OFDEL,	0000200
+	.set TERM_NLDLY,	0000400
+	.set TERM_NL0,		0000000
+	.set TERM_NL1,		0000400
+	.set TERM_CRDLY,	0003000
+	.set TERM_CR0,		0000000
+	.set TERM_CR1,		0001000
+	.set TERM_CR2,		0002000
+	.set TERM_CR3,		0003000
+	.set TERM_TABDLY,	0014000
+	.set TERM_TAB0,		0000000
+	.set TERM_TAB1,		0004000
+	.set TERM_TAB2,		0010000
+	.set TERM_TAB3,		0014000
+	.set TERM_BSDLY,	0020000
+	.set TERM_BS0,		0000000
+	.set TERM_BS1,		0020000
+	.set TERM_FFDLY,	0100000
+	.set TERM_FF0,		0000000
+	.set TERM_FF1,		0100000
+	.set TERM_VTDLY,	0040000
+	.set TERM_VT0,		0000000
+	.set TERM_VT1,		0040000
+	.set TERM_XTABS,	0014000
+
+
+	//c_cflag
+	.set TERM_B0,		0000000
+	.set TERM_B50,		0000001
+	.set TERM_B75,		0000002
+	.set TERM_B110,		0000003
+	.set TERM_B134,		0000004
+	.set TERM_B150,		0000005
+	.set TERM_B200,		0000006
+	.set TERM_B300,		0000007
+	.set TERM_B600,		0000010
+	.set TERM_B1200,	0000011
+	.set TERM_B1800,	0000012
+	.set TERM_B2400,	0000013
+	.set TERM_B4800,	0000014
+	.set TERM_B9600,	0000015
+	.set TERM_B19200,	0000016
+	.set TERM_B38400,	0000017
+	.set TERM_B57600,	0010001
+	.set TERM_B115200,	0010002
+	.set TERM_B230400,	0010003
+	.set TERM_B460800,	0010004
+	.set TERM_B500000,	0010005
+	.set TERM_B576000,	0010006
+	.set TERM_B921600,	0010007
+	.set TERM_B1000000,	0010010
+	.set TERM_B1152000,	0010011
+	.set TERM_B1500000,	0010012
+	.set TERM_B2000000,	0010013
+	.set TERM_B2500000,	0010014
+	.set TERM_B3000000,	0010015
+	.set TERM_B3500000,	0010016
+	.set TERM_B4000000,	0010017
+	.set TERM_CBAUD,	000000010017
+	.set TERM_CBAUDEX,	000000010000
+	.set TERM_CIBAUD,	002003600000
+	.set TERM_CMSPAR,	010000000000
+	.set TERM_CRTSCTS,	020000000000
+	.set TERM_CSIZE,	0000060
+	.set TERM_CS5,		0000000
+	.set TERM_CS6,		0000020
+	.set TERM_CS7,		0000040
+	.set TERM_CS8,		0000060
+	.set TERM_CSTOPB,	0000100
+	.set TERM_CREAD,	0000200
+	.set TERM_PARENB,	0000400
+	.set TERM_PARODD,	0001000
+	.set TERM_HUPCL,	0002000
+	.set TERM_CLOCAL,	0004000
+	.set TERM_ADDRB,	04000000000
+
+
+	//c_lflag
+	.set TERM_ISIG,		0000001
+	.set TERM_ICANON,	0000002
+	.set TERM_XCASE,	0000004
+	.set TERM_ECHO,		0000010
+	.set TERM_ECHOE,	0000020
+	.set TERM_ECHOK,	0000040
+	.set TERM_ECHONL,	0000100
+	.set TERM_NOFLSH,	0000200
+	.set TERM_TOSTOP,	0000400
+	.set TERM_ECHOCTL,	0001000
+	.set TERM_ECHOPRT,	0002000
+	.set TERM_ECHOKE,	0004000
+	.set TERM_FLUSHO,	0010000
+	.set TERM_PENDIN,	0040000
+	.set TERM_IEXTEN,	0100000
+	.set TERM_EXTPROC,	0200000
+
+
+	//c_cc
+	.set TERM_VINTR,	0
+	.set TERM_VQUIT,	1
+	.set TERM_VERASE,	2
+	.set TERM_VKILL,	3
+	.set TERM_VEOF,		4
+	.set TERM_VTIME,	5
+	.set TERM_VMIN,		6
+	.set TERM_VSWTC,	7
+	.set TERM_VSTART,	8
+	.set TERM_VSTOP,	9
+	.set TERM_VSUSP,	10
+	.set TERM_VEOL,		11
+	.set TERM_VREPRINT,	12
+	.set TERM_VDISCARD,	13
+	.set TERM_VWERASE,	14
+	.set TERM_VLNEXT,	15
+	.set TERM_VEOL2,	16
+
+
+	//raw mode                                                                                   GNU ASSEMBLER SUCKS
+	.set TERM_IMASK,	(TERM_IGNBRK+TERM_BRKINT+TERM_PARMRK+TERM_ISTRIP+TERM_INLCR+TERM_IGNCR+TERM_ICRNL+TERM_IXON)
+	.set TERM_OMASK,	TERM_OPOST
+	.set TERM_LMASK,	(TERM_ECHO+TERM_ECHONL+TERM_ICANON+TERM_ISIG+TERM_IEXTEN)
+	.set TERM_CMASK,	(TERM_CSIZE+TERM_PARENB)
+	.set TERM_CSET,		TERM_CS8
+
+
+	//fcntl
+	//see /usr/include/asm-generic/ioctls.h
+	//see TCGETS(2const)
+	.set TCGETS,		0x5401	//tcgetattr()
+	.set TCSETS,		0x5402	//tcsetattr(), TCSANOW
+	.set TCSETSW,		0x5403	//tcsetattr(), TCSADRAIN
+	.set TCSETSF,		0x5404	//tcsetattr(), TCSAFLUSH
+
+
+	.endif
