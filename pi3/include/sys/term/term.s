@@ -9,7 +9,8 @@
 	.include "include/sys/term/bits.s"
 
 term_init:
-	push {r7}
+	//push {r7}
+	mov r3, r7
 
 	mov r0, #STDIN
 	mov r1, #TCGETS
@@ -46,7 +47,8 @@ term_init:
 	bic r0, r0, r1
 	str r0, [r2, #12]
 
-	pop {r7}
+	mov r7, r3
+	//pop {r7}
 	mov pc, lr
 
 
@@ -76,7 +78,8 @@ term_init.CSET:
 
 
 term_raw:
-	push {r7}
+	mov r3, r7
+	//push {r7}
 
 	mov r0, #STDIN
 	mov r1, #TCSETS
@@ -84,11 +87,13 @@ term_raw:
 	mov r7, #SYS_IOCTL
 	swi #0
 
-	pop {r7}
+	//pop {r7}
+	mov r7, r3
 	mov pc, lr
 
 term_orig:
-	push {r7}
+	mov r3, r7
+	//push {r7}
 
 	mov r0, #STDIN
 	mov r1, #TCSETS
@@ -96,7 +101,8 @@ term_orig:
 	mov r7, #SYS_IOCTL
 	swi #0
 
-	pop {r7}
+	//pop {r7}
+	mov r7, r3
 	mov pc, lr
 
 

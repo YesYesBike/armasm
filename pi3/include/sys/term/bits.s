@@ -13,12 +13,12 @@
 	//struct termios {
 	//	tcflag_t c_iflag;		0
 	//	tcflag_t c_oflag;		4
-    //	tcflag_t c_cflag;		8
-    //	tcflag_t c_lflag;		12
-    //	cc_t c_line;			16
-    //	cc_t c_cc[NCCS];		20
-    //	speed_t c_ispeed;		52
-    //	speed_t c_ospeed;		56
+	//	tcflag_t c_cflag;		8
+	//	tcflag_t c_lflag;		12
+	//	cc_t c_line;			16
+	//	cc_t c_cc[NCCS];		20
+	//	speed_t c_ispeed;		52
+	//	speed_t c_ospeed;		56
 	//};
 
 	//sizeof(struct termios): 60
